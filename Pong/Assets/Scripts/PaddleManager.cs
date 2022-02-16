@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PaddleManager : MonoBehaviour
 {
+
     public GameObject leftPaddle;
 
     public GameObject rightPaddle;

@@ -3,7 +3,10 @@ guid: 785bf04ab4e3a2242b12b757b30e626c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Pongpaddle: {fileID: 8300000, guid: 0e72783722f3c4d47a142d68fe40ad49, type: 3}
+  - leftPaddle: {instanceID: 0}
+  - rightPaddle: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

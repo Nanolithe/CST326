@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BallBehaviour : MonoBehaviour
 {
+    public AudioClip paddleSound, wallSound, scoreZoneSound;
+    public AudioSource audioSource;
+   // public AudioSource paddleSource, wallSource, scoreSource;
+    //public AudioClip paddleSound;
     public float horizontalSpeed = 0f;
     public float verticalSpeed = 0f;
 
@@ -48,12 +52,15 @@ public class BallBehaviour : MonoBehaviour
                 verticalDirection = -1f;
                 ballMaterial.color = downColor;
             }
+            
+            audioSource.clip = paddleSound; 
         }
         else if (collision.collider.CompareTag("Wall"))
         {
             // Collision Magic
             verticalDirection *= -1;
 
+            audioSource.clip = wallSound;
         }
         else if (collision.collider.CompareTag("ScoreZone"))
         {
@@ -68,9 +75,13 @@ public class BallBehaviour : MonoBehaviour
                 //Right Point
                 scoreManager.AddRightPoint();
             }
+
             ResetBall();
+
+            audioSource.clip = scoreZoneSound;
         }
-        //Debug.Log(collision.collider.name);
+
+        audioSource.Play();
     }
 
     public void ResetBall()
